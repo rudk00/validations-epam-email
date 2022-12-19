@@ -6,8 +6,10 @@ import java.util.regex.Pattern;
 public class EpamEmailValidation {
 
     public static boolean validateEpamEmail(String email) {
-        // Put your code here
-
+        if (email == null) return false;
+        Pattern pattern = Pattern.compile("[A-z]+_[A-z]+[1-9]*@epam.com");
+        Matcher matcher = pattern.matcher(email);
+        return (matcher.matches());
     }
 }
 
